@@ -4,6 +4,12 @@ public class Rectangle extends Shape {
     protected double width;
     protected double length;
 
+    public Rectangle() {
+        super();
+        this.width = 0.0;
+        this.length = 0.0;
+    }
+
     public Rectangle(double width, double length) {
         super();
         this.width = width;

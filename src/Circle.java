@@ -3,6 +3,10 @@ import AbstractClasses.Shape;
 public class Circle extends Shape {
     protected double radius;
 
+    public Circle() {
+        super();
+    }
+
     public Circle(double radius) {
         super();
         this.radius = radius;
