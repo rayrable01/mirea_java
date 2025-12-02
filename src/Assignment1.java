@@ -12,7 +12,7 @@ public class Assignment1 {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
         System.out.println("=== Задание 1 ===");
-        System.out.println("Фамилия разработчика: Иванов");
+        System.out.println("Фамилия разработчика: Гнатюк");
         System.out.println("Дата и время получения задания: " + dateFormat.format(assignmentReceived));
         System.out.println("Дата и время сдачи задания: " + dateFormat.format(assignmentSubmitted));
         System.out.println("Текущее время в миллисекундах: " + System.currentTimeMillis());

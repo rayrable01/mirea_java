@@ -39,7 +39,7 @@ public class Main {
     }
 
     private static void testStudent() {
-        Student student = new Student("Иванов Иван Иванович", "2000-05-15");
+        Student student = new Student("Гнатюк Даниил Александрович", "2004-08-18");
         System.out.println("Информация о студенте:");
         System.out.println(student);
 
