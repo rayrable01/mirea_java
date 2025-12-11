@@ -52,7 +52,7 @@ public class Main {
                 new ComparableStudent("Charlie", 2, 3.8)
         };
         Arrays.sort(students3);
-        System.out.println("\nСортировка ComparableStudent по ID:");
+        System.out.println("\nСортировка ComparableStudent по Id:");
         printComparableStudents(students3);
     }
 
