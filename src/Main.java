@@ -1,52 +1,40 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        int size = 100_000;
+        int[] arr = new int[size];
 
-        System.out.println("=== Java Date & Time Project ===");
-        System.out.println("Выберите задание для выполнения:");
-        System.out.println("1 - Задание 1 (Информация о разработчике)");
-        System.out.println("2 - Задание 2 (Сравнение дат)");
-        System.out.println("3 - Задание 3 (Класс Student)");
-        System.out.println("4 - Задание 4 (Создание Date и Calendar)");
-        System.out.println("5 - Задание 5 (Сравнение ArrayList и LinkedList)");
-        System.out.print("Ваш выбор: ");
-
-        int choice = scanner.nextInt();
-
-        switch (choice) {
-            case 1:
-                Assignment1.execute();
-                break;
-            case 2:
-                Assignment2.execute();
-                break;
-            case 3:
-                testStudent();
-                break;
-            case 4:
-                Assignment4.execute();
-                break;
-            case 5:
-                Assignment5.execute();
-                break;
-            default:
-                System.out.println("Неверный выбор!");
+        Random random = new Random();
+        for (int i = 0; i < size; i++) {
+            arr[i] = random.nextInt();
         }
 
-        scanner.close();
+        StopWatch sw = new StopWatch();
+        sw.start();
+
+        selectionSort(arr);
+
+        sw.stop();
+
+        System.out.println("Время сортировки выбором: " + sw.getElapsedTime() + " ms");
     }
 
-    private static void testStudent() {
-        Student student = new Student("Гнатюк Даниил Александрович", "2004-08-18");
-        System.out.println("Информация о студенте:");
-        System.out.println(student);
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
 
-        System.out.println("\nФорматы даты рождения:");
-        System.out.println("Короткий: " + student.getFormattedBirthDate("short"));
-        System.out.println("Средний: " + student.getFormattedBirthDate("medium"));
-        System.out.println("Полный: " + student.getFormattedBirthDate("full"));
-        System.out.println("Свой формат (dd.MM.yyyy): " + student.getFormattedBirthDate("dd.MM.yyyy"));
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
     }
 }
